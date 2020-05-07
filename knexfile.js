@@ -2,11 +2,19 @@
 
 module.exports = {
   development: {
-    client: 'postgres.cwotvcstxp7q.us-east-1.rds.amazonaws.com',
+    client: 'pg',
     connection: {
+      host: "postgres.cwotvcstxp7q.us-east-1.rds.amazonaws.com",
       database: "knex",
       user: "postgres",
       password: "postgres"
+    },
+    migrations: {
+      tableName: "knex_migrations",
+      directory: `${__dirname}/src/database/migrations`
+    },
+    seeds: {
+      directory: `${__dirname}/src/database/seeds`
     }
   }
 };
