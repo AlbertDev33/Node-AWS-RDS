@@ -35,6 +35,9 @@ A região escolhida para rodar o RDS foi a Virgínia. Isso pode causar maior lat
 # References
 
 [Knex](http://knexjs.org/)
+
 [Informações Sobre o RDS](https://aws.amazon.com/pt/rds/)
+
 [Guia Rápido Knex](https://devhints.io/knex)
+
 [Auto Update Trigger](https://stackoverflow.com/questions/36728899/knex-js-auto-update-trigger/48028011#48028011)
