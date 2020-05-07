@@ -8,6 +8,7 @@ module.exports = {
             const query = knex('projects')
             .limit(5)
             .offset((page - 1) * 5)
+            .where('deleted_at', null)
 
             const countObject = knex('projects').count()
 
@@ -43,6 +44,34 @@ module.exports = {
             })
 
             return res.status(201).send()
+        } catch (error) {
+            next(error)
+        }
+    },
+    async update(req, res, next) {
+        try {
+            const { title, user_id } = req.body
+            const { id } = req.params
+
+            await knex('projects')
+            .update({ title, user_id })
+            .where({ id })
+
+            return res.send()
+        } catch (error) {
+            next(error)
+        }
+    },
+    async delete(req, res, next) {
+        try {
+            const { id } = req.params
+
+            await knex('projects')
+            .where({ id })
+            .update('deleted_at', new Date())
+            // .del()
+
+            res.send('Project successfully deleted')
         } catch (error) {
             next(error)
         }
