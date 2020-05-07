@@ -14,7 +14,7 @@ Foi utilizado o padrão MVC.
 
 ## Recursos utilizados
 
-Instância RDS da AWS
+Instância RDS da AWS rodando o PostegreSQL
 
 Postbird.
 
